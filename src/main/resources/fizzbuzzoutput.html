@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fizz Buzz Ouput Page</title>
+</head>
+<body>
+<!--This is the default behaviour of the th:text attribute.
+If we want Thymeleaf to respect our HTML tags and not escape them, we will have to use a different attribute: th:utext (for “unescaped text”):-->
+<br />
+<p th:utext="${fizzbuzzoutput}">
+</p>
+</body>
+</html>

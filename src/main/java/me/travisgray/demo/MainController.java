@@ -1,5 +1,6 @@
 package me.travisgray.demo;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,7 @@ public class MainController {
 
 
     @RequestMapping("/")
-    public String showFizzBuzz(){
+    public String showFizzBuzz(Model model){
         int num;
         int num2;
 
@@ -23,36 +24,65 @@ public class MainController {
 
         String thankyoumessage = "Thank You for Trying Fizz Buzz Program";
 
+        StringBuilder stringb = new StringBuilder();
+        String s = stringb.toString();
 
         //        Start int at one aqnd increase by 2 till reaching 100
         for (num = 1; num <= 100 ; num++) {
             if(num % 3 ==0){
-                System.out.println("Fizz");
-            }
-            if(num % 5 == 0){
-                System.out.println("Buzz");
-            }
-            if (num% 15==0){
-                System.out.println("FizzBuzz");
+                stringb.append(num);
+                stringb.append("Fizz");
+                stringb.append("<br/ >");
+                System.out.println("Fizz"+s+num);
 
-                System.out.println("2nd Number mulitples ");
+
+            }
+
+
+            if(num % 5 == 0){
+                stringb.append(num);
+                stringb.append("Buzz");
+                stringb.append("<br/ >");
+                System.out.println("Buzz"+s+num);
+
+
+            }
+
+
+            if (num % 15==0){
+                stringb.append(num);
+                stringb.append("FizzBuzz");
+                stringb.append("<br/ >");
+                System.out.println("FizzBuzz"+s+num);
             }
 
             for (num2 = 1; num2 <= 100; num2++);{
-                if(num % 3 ==0){
-                    System.out.println("Fizz");
+                if(num2 % 3 ==0){
+                    stringb.append(num2);
+                    stringb.append("Fizz");
+                    stringb.append("<br/ >");
+                    System.out.println("Fizz"+s+num2);
                 }
-                if(num % 5 == 0){
-                    System.out.println("Buzz");
+                if(num2 % 5 == 0){
+                    stringb.append(num2);
+                    stringb.append("Buzz");
+                    stringb.append("<br/ >");
+                    System.out.println("Buzz"+s+num2);
                 }
-                if (num% 15==0){
-                    System.out.println("FizzBuzz");
-
-                    System.out.println("2nd Number mulitples ");
+                if (num2 % 15==0){
+                    stringb.append(num2);
+                    stringb.append("FizzBuzz");
+                    stringb.append("<br/ >");
+                    System.out.println("FizzBuzz"+s+num2);
                 }
             }
 
+
+
+//            model.addAttribute()
+            System.out.println(s);
+            model.addAttribute("fizzbuzzoutput",stringb.toString());
         }
-        return thankyoumessage;
+        return stringb.toString();
     }
 }
