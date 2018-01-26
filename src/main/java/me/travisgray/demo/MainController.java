@@ -1,9 +1,12 @@
 package me.travisgray.demo;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Scanner;
 
 @RestController
@@ -75,6 +78,32 @@ public class MainController {
                     stringb.append("<br/ >");
                     System.out.println("FizzBuzz"+s+num2);
                 }
+
+                for (num2 = 1; num2 <= 100; num2++);{
+                    System.out.println("Mulitples of Seven");
+                    if (num2 % 7 ==0){
+                        stringb.append(num2);
+                        stringb.append("Fizz");
+                        stringb.append("<br/ >");
+                        System.out.println("Fizz"+s+num2);
+
+                    }
+                    System.out.println("Multiples of 17");
+                    if(num2 % 17 ==0){
+                        stringb.append(num2);
+                        stringb.append("Buzz");
+                        stringb.append("<br/ >");
+                        System.out.println("Buzz"+s+num2);
+                    }
+                    System.out.println("Muliples of 23");
+                    if (num2 % 23 ==0){
+                        stringb.append(num2);
+                        stringb.append("FizzBuzz");
+                        stringb.append("<br/ >");
+                        System.out.println("FizzBuzz"+s+num2);
+                    }
+
+                }
             }
 
 
@@ -84,4 +113,6 @@ public class MainController {
         }
         return stringb.toString();
     }
-}
+
+
+    }
